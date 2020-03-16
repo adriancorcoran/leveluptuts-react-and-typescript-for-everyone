@@ -1,5 +1,6 @@
 import React from "react";
 import { Head } from "./components/Head";
+import { Button } from "./components/Button";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -7,6 +8,11 @@ function App() {
   return (
     <div className="App">
       <Head title="Hello" />
+      <Button
+        onClick={value => {
+          console.log(value);
+        }}
+      />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
