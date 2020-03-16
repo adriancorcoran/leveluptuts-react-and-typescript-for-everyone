@@ -13,7 +13,9 @@ function App() {
           e.preventDefault();
           console.log(e);
         }}
-      />
+      >
+        Click me again!
+      </Button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
