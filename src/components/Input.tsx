@@ -14,11 +14,16 @@ export const Input = () => {
   const myInput = useRef<HTMLInputElement>(null!); //  make the ref read only, can't change the value using the ref
 
   // console.log(`ref: ${myInput.current}`); //  show the current iteration of the ref - will output the element
-  if (myInput && myInput.current) {
-    //  need to check that myInput is not null
-    console.log(`ref: ${myInput.current.value}`); //  show the current value of the ref
-  }
+  // if (myInput && myInput.current) {
+  //   //  need to check that myInput is not null
+  //   console.log(`ref: ${myInput.current.value}`); //  show the current value of the ref
+  // }
+
   // code above is quite verbose and can be simpler
+  //  can check that myInput is not null using optional chaining
+  // checks value is not null before diving deeper
+  console.log(`ref: ${myInput?.current?.value}`); //  returns a true / falsy value
+
   return (
     <input ref={myInput} value={name} onChange={e => setName(e.target.value)} />
   );
