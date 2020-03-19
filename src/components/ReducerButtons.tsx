@@ -8,12 +8,26 @@ const initialState = { rValue: true };
 type State = {
   rValue: boolean;
 };
-type Action = {
-  type: string;
-  // payload: { //  could also have a payload of data which you can type
-  //   ...otherstuff
-  // }
-};
+
+// generic string
+// type Action = {
+//   type: string;
+//   // payload: { //  could also have a payload of data which you can type
+//   //   ...otherstuff
+//   // }
+// };
+
+// explicitly define the action types
+// type Action = {
+//   type: "one" | "two";
+// };
+
+// explicitly define complex action types
+type Action =
+  | { type: "one" }
+  | { type: "two" }
+  | { type: "three"; payload: true }
+  | { type: "four" };
 
 function reducer(state: State, action: Action) {
   switch (action.type) {
@@ -34,6 +48,7 @@ export const ReducerButtons = () => {
       {state?.rValue && <h1>Visible</h1>}
       <button onClick={() => dispatch({ type: "one" })}>Action One</button>
       <button onClick={() => dispatch({ type: "two" })}>Action Two</button>
+      {/* <button onClick={() => dispatch({ type: "tow" })}>Action Two</button> */}
     </div>
   );
 };
