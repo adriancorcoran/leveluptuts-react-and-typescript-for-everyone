@@ -8,9 +8,13 @@ export const initialValues = {
 
 export const GlobalContext = createContext(initialValues);
 
-type State = {
+// type State = {
+//   rValue: boolean;
+// };
+
+interface State {
   rValue: boolean;
-};
+}
 
 // generic string
 // type Action = {
@@ -65,3 +69,18 @@ export const GlobalProvider: React.FC = ({ children }) => {
 - the button can then call the functions to change state
 - based on the state rValue, the visibility panel in App.tsx will togglw visibility
 */
+
+// Types vs Interfaces - https://www.educba.com/typescript-type-vs-interface/
+
+// Types
+
+// - More constrained
+// - Better intersecting
+// - Better in error messages
+// - Can be used in unions
+
+// Interfaces
+
+// - Better when authoring a library
+// - Extendable
+// - Can be augmented
