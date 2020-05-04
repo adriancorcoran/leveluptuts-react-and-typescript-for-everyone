@@ -45,3 +45,15 @@ function App() {
 }
 
 export default App;
+
+// Resources
+
+/*
+
+1. https://www.github.com/typescript-cheatsheet/react-typescript-cheatsheet
+
+2. Follow Shawn SWYX Wang on twitter @swyx
+
+3. https://www.typescriptlang.org
+
+*/
