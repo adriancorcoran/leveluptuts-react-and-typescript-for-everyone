@@ -4,6 +4,8 @@ import { Button } from "./components/Button";
 import { Input } from "./components/Input";
 import { GlobalProvider } from "./components/GlobalState";
 import { ReducerButtons } from "./components/ReducerButtons";
+import BigC from "./components/BigC";
+
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -12,6 +14,7 @@ function App() {
     <GlobalProvider>
       <div className="App">
         <Head title="Hello" />
+        <BigC title="Class" />
         <Button
           onClick={(e) => {
             e.preventDefault();
