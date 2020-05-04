@@ -1,8 +1,9 @@
 // useReducer allows some Redux style management of state using actions and reducers
 // gives more fine grained control over the state
 
-import React, { useReducer, useRef } from "react";
+import React, { useReducer, useRef, useContext } from "react";
 
+import { GlobalContext } from "./GlobalState";
 import { useClickOutside } from "./useClickOutside";
 
 const initialState = { rValue: true };
@@ -47,6 +48,8 @@ export const ReducerButtons = () => {
 
   const ref = useRef<HTMLDivElement>(null!);
 
+  const { rValue } = useContext(GlobalContext);
+
   // not just expecting a ref, expecting a ref linked to a HTMLDivElement
   useClickOutside(ref, () => {
     console.log(`clicked outside`);
@@ -55,7 +58,7 @@ export const ReducerButtons = () => {
   // dispatch will run a function for us
   return (
     <div ref={ref}>
-      {state?.rValue && <h1>Visible</h1>}
+      {rValue && <h1>Visible</h1>}
       <button onClick={() => dispatch({ type: "one" })}>Action One</button>
       <button onClick={() => dispatch({ type: "two" })}>Action Two</button>
       {/* <button onClick={() => dispatch({ type: "tow" })}>Action Two</button> */}
