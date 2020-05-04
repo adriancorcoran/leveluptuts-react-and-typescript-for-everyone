@@ -2,6 +2,7 @@
 // gives more fine grained control over the state
 
 import React, { useRef, useContext } from "react";
+import styled from "styled-components";
 
 import { GlobalContext } from "./GlobalState";
 import { useClickOutside } from "./useClickOutside";
@@ -18,11 +19,15 @@ export const ReducerButtons = () => {
 
   // dispatch will run a function for us
   return (
-    <div ref={ref}>
+    <Wrapper ref={ref}>
       {rValue && <h1>Visible</h1>}
       <button onClick={turnOn}>Action One</button>
       <button onClick={turnOff}>Action Two</button>
       {/* <button onClick={() => dispatch({ type: "tow" })}>Action Two</button> */}
-    </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  background: red;
+`;
