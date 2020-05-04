@@ -38,6 +38,8 @@ type Props = {
   // }; //  object with specific key type
   // func: () => void; //  function returning specific type
   // user: User; //  custom object type
+  // type3?: Array<string>;
+  // type4?: string[]; //  same as type 3 but shorthand
 };
 
 export const Head = ({ title = "Hello", isActive = true }: Props) => {
